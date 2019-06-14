@@ -1,6 +1,6 @@
 import React  from 'react'
 import styled from 'styled-components'
-
+import axios from 'axios'
 
 
 const sliderThumbStyles = (props) => ( `
@@ -47,6 +47,8 @@ export default class MySlider extends React.Component{
     state = {
         amount : 500,
         months : 10,
+        loan : {},
+        isLoaded : false
         
        
     }
@@ -63,6 +65,9 @@ export default class MySlider extends React.Component{
             months : e.target.value
         }))
     }
+    fetchData = () => {
+        console.log("make api call here")
+    }
 
 
 
@@ -74,13 +79,14 @@ export default class MySlider extends React.Component{
            <div>
                
                <Styles opacity = {0.1} color = {this.props.color}>
-              <input type = "range" min = {500} max = {5000} value = {this.state.amount} className = "slider" onChange = {this.handleAmountChange} />
-              <div className = "value" >{this.state.amount}</div>
+              <input type = "range" min = {500} max = {5000} value = {this.state.amount}
+               className = "slider" onChange = {this.handleAmountChange}  onClick={this.fetchData} />
+              <div className = "value" >{this.state.amount} </div>
              
            </Styles>
             <Styles opacity = {0.1} color = {this.props.color}>
               <input type = "range"  min = {6} max = {24} value = {this.state.months} className = "slider" 
-              onChange = {this.handleMonthChange}  />
+              onChange = {this.handleMonthChange}   onClick={this.fetchData}/>
               <div className = "value" >{this.state.months}</div>
              
            </Styles>
