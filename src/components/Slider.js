@@ -1,4 +1,4 @@
-import React  from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
 
@@ -47,12 +47,14 @@ export default class MySlider extends React.Component{
     state = {
         amount : 500,
         months : 10,
-        loan : {},
-        isLoaded : false
         
+        loan:{},
+      
        
     }
-   
+    // handleOnChange = (e) => this.setState({value : e.target.value})
+    // handleChange = (e) => this.setState({values : e.target.value})
+
     handleAmountChange = (e) => {
         console.log(e.target.value)
         e.persist()
@@ -65,32 +67,43 @@ export default class MySlider extends React.Component{
             months : e.target.value
         }))
     }
+
+
+    
     fetchData = () => {
-        console.log("make api call here")
+        console.log('make api call here')
+        axios.get(`https://ftl-frontend-test.herokuapp.com/interest?amount=${this.state.amount}&numMonths=${this.state.months}`)
+            
+            .then(response => {
+                console.log(response.data)
+                 this.setState(() =>({ loan:response.data }))
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }
-
-
-
+    
    render() {
-       return(
-          
-
-          
+       return(       
+        
            <div>
                
                <Styles opacity = {0.1} color = {this.props.color}>
               <input type = "range" min = {500} max = {5000} value = {this.state.amount}
-               className = "slider" onChange = {this.handleAmountChange}  onClick={this.fetchData} />
-              <div className = "value" >{this.state.amount} </div>
+               className = "slider" onChange = {this.handleAmountChange} onClick={this.fetchData}/>
+              <div className = "value" >{this.state.amount}</div>
              
            </Styles>
             <Styles opacity = {0.1} color = {this.props.color}>
-              <input type = "range"  min = {6} max = {24} value = {this.state.months} className = "slider" 
-              onChange = {this.handleMonthChange}   onClick={this.fetchData}/>
+              <input type = "range"  min = {6} max = {24} value = {this.state.months} 
+              className = "slider" 
+              onChange = {this.handleMonthChange} onClick={this.fetchData} />
               <div className = "value" >{this.state.months}</div>
              
            </Styles>
-        
+         
+         <p> {this.state.loan.interestRate}</p>
+      
            </div>
            
        )
