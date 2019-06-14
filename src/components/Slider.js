@@ -46,9 +46,9 @@ const Styles = styled.div `
 export default class MySlider extends React.Component{
     state = {
         amount : 500,
-        months : 10,
-        
+        months : 10,        
         loan:{},
+        isLoaded : false
       
        
     }
@@ -76,7 +76,7 @@ export default class MySlider extends React.Component{
             
             .then(response => {
                 console.log(response.data)
-                 this.setState(() =>({ loan:response.data }))
+                 this.setState(() =>({ loan:response.data , isLoaded :true}))
             })
             .catch(err => {
                 console.log(err)
@@ -101,12 +101,19 @@ export default class MySlider extends React.Component{
               <div className = "value" >{this.state.months}</div>
              
            </Styles>
-         
-         <p> InterestRate :: {this.state.loan.interestRate}</p>        
-          <p>monthlyPayment-Currency :: {this.state.loan.monthlyPayment.currency}</p>
-          <p>NumPayments :: {this.state.loan.numPayments}</p>         
-          <p>Principal-Currency :: {this.state.loan.principal.currency}</p>
-      
+         {this.state.loaded && 
+         <div>
+            <p>InterestRate :: {this.state.loan.interestRate}</p>
+            <p>monthlyPayment-Amount :: {this.state.loan.monthlyPayment.amount}</p>
+            <p>monthlyPayment-Currency :: {this.state.loan.monthlyPayment.currency}</p>
+            <p>NumPayments :: {this.state.loan.numPayments}</p>
+            <p>Principal-Amount :: {this.state.loan.principal.amount}</p>
+            <p>Principal-Currency :: {this.state.loan.principal.currency}</p>
+        </div>
+        
+        
+        }
+        
            </div>
            
        )
