@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 import './App.css';
 import Slider from './components/Slider'
+
 const Styles = styled.div `
   .App {
     display : flex;
@@ -26,7 +27,6 @@ class App extends React.Component{
     
     )
   }
-
 
 }
 

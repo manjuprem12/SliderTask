@@ -39,21 +39,20 @@ const Styles = styled.div `
         }
          &::-moz-range-thumb {
             ${props => sliderThumbStyles(props)}
-         }
+        }
     }
 `;
 
 export default class MySlider extends React.Component{
     state = {
-        amount : 500,
-        months : 10,        
+        amount : 500 ,
+        months : 24,        
         loan:{},
         isLoaded : false
       
        
     }
-    // handleOnChange = (e) => this.setState({value : e.target.value})
-    // handleChange = (e) => this.setState({values : e.target.value})
+
 
     handleAmountChange = (e) => {
         console.log(e.target.value)
@@ -76,7 +75,7 @@ export default class MySlider extends React.Component{
             
             .then(response => {
                 console.log(response.data)
-                 this.setState(() =>({ loan:response.data , isLoaded :true}))
+                this.setState(() =>({ loan:response.data , isLoaded :true}))
             })
             .catch(err => {
                 console.log(err)
@@ -87,34 +86,36 @@ export default class MySlider extends React.Component{
        return(       
         
            <div>
-               
-               <Styles opacity = {0.1} color = {this.props.color}>
-              <input type = "range" min = {500} max = {5000} value = {this.state.amount}
-               className = "slider" onChange = {this.handleAmountChange} onClick={this.fetchData}/>
-              <div className = "value" >{this.state.amount}</div>
+                
+                <Styles opacity = {0.1} color = {this.props.color}>
+                    <input type = "range" min = {500} max = {5000} value = {this.state.amount}
+                        className = "slider" onChange = {this.handleAmountChange} onClick={this.fetchData}/>
+                    <div className = "value" >{this.state.amount}</div>
+                
+                </Styles>
+                <Styles opacity = {0.1} color = {this.props.color}>
+                    <input type = "range"  min = {6} max = {24} value = {this.state.months} 
+                        className = "slider" onChange = {this.handleMonthChange} onClick={this.fetchData} />
+                    <div className = "value" >{this.state.months}</div>
+                    
+                </Styles>
+                {this.state.isLoaded && 
+                    <div>
+                         
+                         <table border = "2">          
              
-           </Styles>
-            <Styles opacity = {0.1} color = {this.props.color}>
-              <input type = "range"  min = {6} max = {24} value = {this.state.months} 
-              className = "slider" 
-              onChange = {this.handleMonthChange} onClick={this.fetchData} />
-              <div className = "value" >{this.state.months}</div>
-             
-           </Styles>
-         {this.state.loaded && 
-         <div>
-            <p>InterestRate :: {this.state.loan.interestRate}</p>
-            <p>monthlyPayment-Amount :: {this.state.loan.monthlyPayment.amount}</p>
-            <p>monthlyPayment-Currency :: {this.state.loan.monthlyPayment.currency}</p>
-            <p>NumPayments :: {this.state.loan.numPayments}</p>
-            <p>Principal-Amount :: {this.state.loan.principal.amount}</p>
-            <p>Principal-Currency :: {this.state.loan.principal.currency}</p>
-        </div>
+                            <p>InterestRate :: {this.state.loan.interestRate}</p>
+                            <p>monthlyPayment-Amount :: {this.state.loan.monthlyPayment.amount}</p>
+                            <p>monthlyPayment-Currency :: {this.state.loan.monthlyPayment.currency}</p>
+                            <p>NumPayments :: {this.state.loan.numPayments}</p>
+                            <p>Principal-Amount :: {this.state.loan.principal.amount}</p>
+                            <p>Principal-Currency :: {this.state.loan.principal.currency}</p>
+                        </table> 
+                    </div>        
+            
+                }
         
-        
-        }
-        
-           </div>
+            </div>
            
        )
    }
