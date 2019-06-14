@@ -102,7 +102,10 @@ export default class MySlider extends React.Component{
              
            </Styles>
          
-         <p> {this.state.loan.interestRate}</p>
+         <p> InterestRate :: {this.state.loan.interestRate}</p>        
+          <p>monthlyPayment-Currency :: {this.state.loan.monthlyPayment.currency}</p>
+          <p>NumPayments :: {this.state.loan.numPayments}</p>         
+          <p>Principal-Currency :: {this.state.loan.principal.currency}</p>
       
            </div>
            
