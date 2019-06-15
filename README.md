@@ -44,8 +44,8 @@ and interest rate and monthly payment details will display in the application.
 
 ### Sliders
 
-•  Amount
-	o  Amount will be a slider. According to slider moving amount will be displayed.
+•  Amount :
+	o  Amount will be a slider. According to slider moving amount will be displayed. <br/>
 	o  Loan amount will be between $500 to $500
 •  Loan Duration
 	o  Loan Duration is according to month. Loan duration will between 6 to 24 months
