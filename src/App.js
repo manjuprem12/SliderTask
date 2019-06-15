@@ -16,6 +16,11 @@ const Styles = styled.div `
 class App extends React.Component{
   render(){
     return(
+      <div>
+         <center>
+            <h2 className="font">LOAN DETAILS </h2>
+          </center>
+          <hr className = "new5"/>
       <Styles>
         <div className = "App" >
          <div className = "wrapper" >
@@ -25,6 +30,7 @@ class App extends React.Component{
         </div>
       </Styles>
     
+      </div>
     )
   }
 

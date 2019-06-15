@@ -22,6 +22,7 @@ const Styles = styled.div `
     .value {
         flex : 1;
         font-size :2rem;
+        color: #000000;
     }
     .slider {
         flex :6;
@@ -45,11 +46,10 @@ const Styles = styled.div `
 
 export default class MySlider extends React.Component{
     state = {
-        amount : 500 ,
-        months : 24,        
+        amount : 800 ,
+        months : 10,        
         loan:{},
-        isLoaded : false
-      
+        isLoaded : false     
        
     }
 
@@ -84,35 +84,40 @@ export default class MySlider extends React.Component{
     
    render() {
        return(       
-        
-           <div>
+           
+           <div className = "body">               
                 
-                <Styles opacity = {0.1} color = {this.props.color}>
+                <div className = "value" > Loan Amount ${this.state.amount}</div>
+                <Styles opacity = {this.state.amount >500 ? (this.state.amount /5000) : .1} color = {this.props.color}>
+                <div className = "value" >$500</div>
                     <input type = "range" min = {500} max = {5000} value = {this.state.amount}
                         className = "slider" onChange = {this.handleAmountChange} onClick={this.fetchData}/>
-                    <div className = "value" >{this.state.amount}</div>
+                    <div className = "value" >$5000</div>
                 
                 </Styles>
-                <Styles opacity = {0.1} color = {this.props.color}>
+
+                <div className = "value" >Loan Duration {this.state.months} Months</div>
+                <Styles opacity = {this.state.months > 6 ? (this.state.months /24) : .1}color = {this.props.color}>
+                <div className = "value" >6</div>
                     <input type = "range"  min = {6} max = {24} value = {this.state.months} 
                         className = "slider" onChange = {this.handleMonthChange} onClick={this.fetchData} />
-                    <div className = "value" >{this.state.months}</div>
+                    <div className = "value" >24</div>
                     
                 </Styles>
                 {this.state.isLoaded && 
                     <div>
-                         
-                         <table border = "2">          
-             
-                            <p>InterestRate :: {this.state.loan.interestRate}</p>
-                            <p>monthlyPayment-Amount :: {this.state.loan.monthlyPayment.amount}</p>
-                            <p>monthlyPayment-Currency :: {this.state.loan.monthlyPayment.currency}</p>
-                            <p>NumPayments :: {this.state.loan.numPayments}</p>
-                            <p>Principal-Amount :: {this.state.loan.principal.amount}</p>
-                            <p>Principal-Currency :: {this.state.loan.principal.currency}</p>
-                        </table> 
+                        <center>
+                            <table border = "4" className = "table">      
+                                
+                                <p className="family">InterestRate :: {this.state.loan.interestRate}</p>
+                                <p className="family" >MonthlyPayment-Amount :: {this.state.loan.monthlyPayment.amount}</p>
+                                <p className="family">MonthlyPayment-Currency :: {this.state.loan.monthlyPayment.currency}</p>
+                                <p className="family">NumPayments :: {this.state.loan.numPayments}</p>
+                                <p className="family">Principal-Amount :: {this.state.loan.principal.amount}</p>
+                                <p className="family">Principal-Currency :: {this.state.loan.principal.currency}</p>            
+                            </table> 
+                        </center>
                     </div>        
-            
                 }
         
             </div>
