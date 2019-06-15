@@ -7,6 +7,7 @@ const Styles = styled.div `
   .App {
     display : flex;
     justify-content : center;
+    background-color: #92C7C7 ;
   }
   .wrapper {
     margin-top : 20vh;
