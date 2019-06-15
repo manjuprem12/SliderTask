@@ -2,3 +2,31 @@
 ### Overview
 I am created a simple slider app. This slider app is allows a user to enter loan amount and loan duration 
 and interest rate and monthly payment details will display in the application.
+
+###Sliders
+	Amount
+      o	Amount will be a slider. According to slider moving amount will be displayed.
+      o	Loan amount will be between $500 to $5000
+	Loan Duration
+      o	Loan Duration is according to month. Loan duration will between 6 to 24 months
+
+###Usage 
+		
+		•	Interest Rate
+		    o	Interest rate will be displayed
+
+		•	Monthly Payment-Amount 
+	    	o	Monthly payment in amount (how much has to be paid).
+
+		•	Monthly Payment-Currency
+	    	o	Currency will be USD(amount currency)
+
+		•	Num Payments
+				o	Numbers of payments.
+
+		•	Principal-Amount 
+				o	User's Principal Amount 
+
+		•	Principal-Currency
+				o	Principal amount will be USD
+
