@@ -49,19 +49,18 @@ export default class MySlider extends React.Component{
                             
                 
                 <p className = "textfont">
-                Loan Amount
+                Loan Amount ${this.state.amount}
                 
-                <input type = "text"  style = {{marginLeft : "0.5rem"}} className = "font" value = {this.state.amount} onChange = {this.handleAmountChange} />     </p>
+                </p>
+                
+                <Slide handle={this.handleAmountChange} min={500} max = {5000} fetchData={this.fetchData} value = {this.state.amount}/>
                
-                
-                <Slide handle={this.handleAmountChange} min={500} max = {5000} fetchData={this.fetchData}/>
                 <p className = "textfont">
-                Loan Duration
+                Loan Duration {this.state.months} Months
               
-                <input type = "text"  style = {{marginLeft : "0.5rem"}} className = "font" value = {this.state.months}  onChange = {this.handleMonthChange} />  </p>   
+                </p>
                 
-                
-                <Slide handle={this.handleMonthChange} min = {6} max= {24} fetchData={this.fetchData} />
+                <Slide handle={this.handleMonthChange} min = {6} max= {24} fetchData={this.fetchData} value = {this.state.months} />
                 
                 {this.state.isLoaded && 
                     <div>

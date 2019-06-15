@@ -7,7 +7,7 @@ const Styles = styled.div `
   .App {
     display : flex;
     justify-content : center;
-    background-color: #808080 ;
+    background-color: #8C001A  ;
   }
   .wrapper {
     margin-top : 20vh;
@@ -25,7 +25,7 @@ class App extends React.Component{
           <Styles>
             <div className = "App" >
               <div className = "wrapper" >
-                <Slider color = "#3D9970"/>
+                <Slider style={{color:"red"}}/>
               </div>
             </div>
           </Styles>
