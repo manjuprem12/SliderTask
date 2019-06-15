@@ -1,4 +1,4 @@
-<br/>## Slider Task
+## Slider Task
 ### Overview
 I am created a simple slider app. This slider app is allows a user to enter loan amount and loan duration 
 and interest rate and monthly payment details will display in the application.
@@ -31,19 +31,14 @@ and interest rate and monthly payment details will display in the application.
   "last 1 firefox version",<br/>
   "last 1 safari version"
 
-    
-     
+      
   
-
-
-
-
 ### Sliders
 
-• Amount <br/>
+•Amount <br/>
 	o  Amount will be a slider. According to slider moving amount will be displayed. <br/>
 	o  Loan amount will be between $500 to $500 <br/>
-• Loan Duration <br/>
+•Loan Duration <br/>
 	o  Loan Duration is according to month. Loan duration will between 6 to 24 months
 
 
