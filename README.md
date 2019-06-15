@@ -5,42 +5,47 @@ and interest rate and monthly payment details will display in the application.
 
 ### Dependencies and installation
 
-"name": "client", 
-"version": "0.1.0",
-"private": true, 
-"dependencies": 
+
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": 
     "antd": "^3.19.3",
-    "axios": "^0.19.0", 
-    "react": "^16.8.6", 
-    "react-dom": "^16.8.6", 
-    "react-scripts": "3.0.1", 
+    "axios": "^0.19.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1",
     "styled-components": "^4.3.1"
-"scripts": 
+  
+  "scripts": 
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-"eslintConfig":
+  
+  "eslintConfig": 
     "extends": "react-app"
-"browserslist":
-    "production": ">0.2%",
-    "not dead",
-    "not op_mini all"
-"development": 
-    "last 1 chrome version",
-    "last 1 firefox version",
-    "last 1 safari version"
-
+  
+  "browserslist": 
+    "production": 
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
     
+    "development": 
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    
+
 
 ### Sliders
 
-•	Amount
-	•  Amount will be a slider. According to slider moving amount will be displayed.
-	•  Loan amount will be between $500 to $5000
-
-•	Loan Duration
-	•   Loan Duration is according to month. Loan duration will between 6 to 24 months
+•  Amount
+	o  Amount will be a slider. According to slider moving amount will be displayed.
+	o  Loan amount will be between $500 to $500
+•  Loan Duration
+	o  Loan Duration is according to month. Loan duration will between 6 to 24 months
 
 
 ### Usage 
