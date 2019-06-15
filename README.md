@@ -1,20 +1,28 @@
 ## Create React APP
 `create-reat-app client`
+creating react app 
 
+### `npm start`
+Runs the app in the development mode [http://localhost:300]([http://localhost:3000) to view it in the browser.
+You will also see any lint errors in the console.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### `npm install --save styled-components`
+
+styled-componets for uploading slider.
+imported slider using styled components then assign the values.
+Added events for getting values.
+Two sliders included one is for amount and one is for month
+
+### `npm install --save axios`
+axios used to fetch loan data according to month and amount 
+
+### `npm install antd`
+Ant Design used for design card
+the fetched data is displaying inside a card
 
 ## Available Scripts
 
 In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
 ### `npm test`
 
