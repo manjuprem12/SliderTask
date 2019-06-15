@@ -7,7 +7,7 @@ const Styles = styled.div `
   .App {
     display : flex;
     justify-content : center;
-    background-color: #92C7C7 ;
+    background-color: #808080 ;
   }
   .wrapper {
     margin-top : 20vh;
@@ -19,17 +19,16 @@ class App extends React.Component{
     return(
       <div>
          <center>
-            <h2 className="font">LOAN DETAILS </h2>
+            <h2 className="fontfamily"> FullThrottle Labs - LOAN DETAILS </h2>
           </center>
-          <hr className = "new5"/>
-      <Styles>
-        <div className = "App" >
-         <div className = "wrapper" >
-            <Slider color = "#3D9970"/>
-           
-         </div>
-        </div>
-      </Styles>
+          <hr className = "line"/>
+          <Styles>
+            <div className = "App" >
+              <div className = "wrapper" >
+                <Slider color = "#3D9970"/>
+              </div>
+            </div>
+          </Styles>
     
       </div>
     )

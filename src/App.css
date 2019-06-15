@@ -4,29 +4,40 @@
 .body {
   background-color:#3C277D;
 }
+.textfont{
+  font-size: 170%;
+ 
+  font-family: "Times New Roman", Times, serif;
+  color : rgb(2, 23, 85);
+}
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
   pointer-events: none;
 }
-.b {
-  font-style: italic;
-}
-.new5 {
+.line {
   border: 1px solid black;
   border-radius: 1px;
 }
 .family {
   font-family: "Times New Roman", Times, serif;
   font-weight: bold;
+  font-size: 160%;
 }
 .font {
  
-    font-size: 150%;
+    font-size: 100%;
     font-weight: bold;
     font-family: "Times New Roman", Times, serif;
  
 }
+.fontfamily {
+     font-size: 200%;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+ 
+}
+
 .table{
   border-color: rgb(32, 27, 30);}
 

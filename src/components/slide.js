@@ -45,12 +45,21 @@ const Styles = styled.div `
 const slide = function(props){
     return(
         <Styles opacity = {0.1}color = {props.color}>
-                <div className = "value" >{props.min}</div>
-                    <input type = "range"  min = {props.min} max = {props.max} value = {props.months} 
-                        className = "slider" onChange = {props.handle} onClick={props.fetchData} />
-                    <div className = "value" >{props.max}</div>
+            <div className = "value" >
+                {props.min}
+            </div>
+            <input type = "range"  
+                min = {props.min} 
+                max = {props.max} 
+                value = {props.months} 
+                className = "slider" 
+                onChange = {props.handle}
+                onClick={props.fetchData} />
+            <div className = "value" >
+                {props.max}
+            </div>
                     
-                </Styles>
+        </Styles>
     )
 }
 export default slide;
